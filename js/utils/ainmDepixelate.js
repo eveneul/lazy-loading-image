@@ -5,7 +5,6 @@ const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
 export async function animDepixelate(element) {
 	const parentElement = element.parentNode // 이미지 태그의 부모 (인라인 스타일)
-	parentElement.classList.add('-pixelated')
 
 	// 기존에 남아 있는 캔버스가 있다면 제거
 	const previousCanvas = parentElement.querySelector('canvas')
