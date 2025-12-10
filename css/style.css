@@ -11,6 +11,10 @@
 .c-image .c-image__image {
   display: block;
   height: 100%;
+  opacity: 0;
+}
+.c-image .c-image__image.-revealed {
+  opacity: 1;
 }
 
 main {

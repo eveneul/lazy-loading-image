@@ -12,16 +12,19 @@ const images = document.querySelectorAll('.c-image')
 const inViewObserver = new IntersectionObserver(
 	(entries) => {
 		entries.forEach((entry) => {
-			if (entry.isIntersecting) {
-				const image = entry.target.querySelector('.c-image__image')
-				animDepixelate(image)
-			}
+			if (!entry.isIntersecting) return
+
+			const image = entry.target.querySelector('.c-image__image')
+			if (!image) return
+
+			animDepixelate(image)
+
+			inViewObserver.unobserve(entry.target)
 		})
 	},
 	{
-		root: null,
-		rootMargin: '1px',
-		threshold: 1
+		threshold: 0,
+		rootMargin: '0px 0px -20% 0px'
 	}
 )
 

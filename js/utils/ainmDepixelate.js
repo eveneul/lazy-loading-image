@@ -81,5 +81,6 @@ export async function animDepixelate(element) {
 
 	// 애니메이션 끝 캔버스 제거
 	canvas.remove()
-	parentElement.classList.remove('-pixelated')
+	// parentElement.classList.remove('-pixelated')
+	element.classList.add('-revealed')
 }
